@@ -4,6 +4,8 @@ import { max } from 'd3-array'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
 import { forceLink, forceSimulation, forceManyBody, forceCenter } from 'd3-force'
 import { drag } from 'd3-drag'
+require('../App.css')
+import Dimensions from 'react-dimensions'
 
 
 class GraphChart extends Component {
@@ -29,20 +31,25 @@ class GraphChart extends Component {
     // find the node index
     function find(f){
       var i = -1
-        nodes.forEach(function(node, index){
-            if(node.id == f)
-                i = index;
-        });
-        return i;
+      nodes.forEach(function(node, index){
+          if(node.id === f)
+              i = index;
+      });
+      return i;
     }
+
     //set the source and target index
     edges.forEach(function(d){
-        d.source = find(d.source);
-        d.target = find(d.target);
+        if(!d.sourceOriginal) {
+          d.sourceOriginal = d.source;
+          d.targetOriginal = d.target;
+        }
+        d.source = find(d.sourceOriginal);
+        d.target = find(d.targetOriginal);
     });
 
-    console.log(JSON.stringify(nodes))
-    console.log(JSON.stringify(edges))
+    //console.log(JSON.stringify(nodes))
+    //console.log(JSON.stringify(edges))
 
     var nodeHash = {};
     nodes.forEach(node => {
@@ -141,11 +148,12 @@ class GraphChart extends Component {
   }
 
   render() {
+    console.log(this.props);
     return <svg ref={node => this.node = node}
-      width={800}
-      height={800}
-      />
+              width={this.props.width || this.props.containerWidth || 400}
+              height={this.props.height || this.props.containerHeight || 400}
+              />
   }
 }
 
-export default GraphChart
+export default Dimensions()(GraphChart)

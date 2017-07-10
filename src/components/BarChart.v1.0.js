@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import { scaleLinear } from 'd3-scale'
 import { max } from 'd3-array'
 import { select } from 'd3-selection'
+import Dimensions from 'react-dimensions'
+
 
 class BarChart extends Component {
 
   constructor(props) {
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
+    this.state = {
+        width: (this.props.width || this.props.containerWidth || 400),
+        height: (this.props.height || this.props.containerHeight || 400)
+    };
   }
 
   componentDidMount() {
@@ -23,8 +29,8 @@ class BarChart extends Component {
     const dataMax = max(this.props.data)
     const yScale = scaleLinear()
       .domain([0,dataMax])
-      .range([0,this.props.size[1]])
-    const barWidth = this.props.size[0]/this.props.data.length
+      .range([0,this.state.height])
+    const barWidth = this.state.width/this.props.data.length
 
     select(node)
       .selectAll("rect")
@@ -42,7 +48,7 @@ class BarChart extends Component {
       .selectAll("rect")
       .data(this.props.data)
       .attr("x", (d,i) => i*barWidth)
-      .attr("y", d => this.props.size[1] - yScale(d))
+      .attr("y", d => this.state.height - yScale(d))
       .attr("height", d => yScale(d))
       .attr("width", barWidth)
       .attr("stroke", "blue")
@@ -52,11 +58,13 @@ class BarChart extends Component {
   }
 
   render() {
+    console.log(this.props);
+    console.log(this.state);
     return <svg ref={node => this.node = node}
-      width={500}
-      height={500}
-      />
+              width={this.state.width}
+              height={this.state.height}
+              />
   }
 }
 
-export default BarChart
+export default Dimensions()(BarChart)

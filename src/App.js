@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import BarChart from './BarChart'
-import GraphChart from './GraphChart'
-import graphData from './GraphChart.data'
+import BarChart from './components/BarChart'
+import GraphChart from './components/GraphChart'
+import graphData from './components/GraphChart.data.js'
 
 
 class App extends Component {
