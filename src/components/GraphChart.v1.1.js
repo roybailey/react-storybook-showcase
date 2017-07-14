@@ -24,7 +24,8 @@ class GraphChart extends Component {
   }
 
   createGraphChart() {
-    const node = this.node
+    const rootNode = this.node
+    const svg = select(rootNode)
     const nodes = this.props.data.nodes
     const edges = this.props.data.links
 
@@ -62,11 +63,11 @@ class GraphChart extends Component {
       edge.target = nodeHash[edge.target];
     });
 
-    var marker = select(node)
+    var marker = svg
       .append('defs')
       .append('marker')
         .attr("id", "Triangle")
-        .attr("refX", 24)
+        .attr("refX", 42)
         .attr("refY", 12)
         .attr("markerUnits", 'userSpaceOnUse')
         .attr("markerWidth", 24)
@@ -82,14 +83,12 @@ class GraphChart extends Component {
     var linkForce = forceLink();
 
     function forceTick() {
-      select(node)
-        .selectAll("line.link")
+      svg.selectAll("line.link")
         .attr("x1", d => d.source.x)
         .attr("x2", d => d.target.x)
         .attr("y1", d => d.source.y)
         .attr("y2", d => d.target.y);
-      select(node)
-        .selectAll("g.node")
+      svg.selectAll("g.node")
         .attr("transform", d => `translate(${d.x},${d.y})`);
     }
 
@@ -102,8 +101,7 @@ class GraphChart extends Component {
 
     simulation.force("link").links(edges);
 
-    select(node)
-      .selectAll("line.link")
+    svg.selectAll("line.link")
       .data(edges, d => `${d.source.id}-${d.target.id}`)
       .enter()
       .append("line")
@@ -111,11 +109,10 @@ class GraphChart extends Component {
         .style("opacity", .5)
         .style("stroke-width", d => 1+d.weight);
 
-    select(node)
-      .selectAll("line")
+    svg.selectAll("line")
       .attr("marker-end", "url(#Triangle)");
 
-    var nodeEnter = select(node)
+    var nodeEnter = svg
       .selectAll("g.node")
       .data(nodes, d => d.id)
       .enter()

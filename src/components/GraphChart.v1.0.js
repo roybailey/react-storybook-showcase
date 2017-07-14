@@ -66,7 +66,7 @@ class GraphChart extends Component {
       .append('defs')
       .append('marker')
         .attr("id", "Triangle")
-        .attr("refX", 24)
+        .attr("refX", 42)
         .attr("refY", 12)
         .attr("markerUnits", 'userSpaceOnUse')
         .attr("markerWidth", 24)
