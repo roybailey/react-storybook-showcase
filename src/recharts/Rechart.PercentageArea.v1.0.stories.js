@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
-import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'rechart';
+import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 
 const data = [
       {month: '2015.01', a: 4000, b: 2400, c: 2400},
@@ -45,15 +45,15 @@ const renderTooltipContent = (o) => {
 
 storiesOf('Rechart Percentage v1.0', module)
   .add('Rechart Percentage Area', () => (
-    <AreaChart width={600} height={400} data={data} stackOffset="expand"
-          margin={{top: 10, right: 30, left: 0, bottom: 0}} >
-      <XAxis dataKey="month"/>
-      <YAxis tickFormatter={toPercent}/>
-      <CartesianGrid strokeDasharray="3 3"/>
-      <Tooltip content={renderTooltipContent}/>
-      <Area type='monotone' dataKey='a' stackId="1" stroke='#8884d8' fill='#8884d8' />
-      <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
-      <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658' />
-    </AreaChart>
+      <AreaChart width={600} height={400} data={data} stackOffset="expand"
+            margin={{top: 10, right: 30, left: 0, bottom: 0}} >
+        <XAxis dataKey="month"/>
+        <YAxis tickFormatter={toPercent}/>
+        <CartesianGrid strokeDasharray="3 3"/>
+        <Tooltip content={renderTooltipContent}/>
+        <Area type='monotone' dataKey='a' stackId="1" stroke='#8884d8' fill='#8884d8' />
+        <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
+        <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658' />
+      </AreaChart>
   ))
   ;
