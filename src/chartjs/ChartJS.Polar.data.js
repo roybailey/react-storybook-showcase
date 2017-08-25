@@ -1,8 +1,4 @@
-import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
-import {Polar} from 'react-chartjs-2';
-
-const data = {
+export default {
   datasets: [{
     data: [
       11,
@@ -28,13 +24,3 @@ const data = {
     'Blue'
   ]
 };
-
-
-storiesOf('ChartJS Polar v1.0', module)
-  .add('ChartJS Polar', () => (
-		<div>
-			<h2>Polar Example</h2>
-			<Polar data={data} />
-		</div>
-  ))
-  ;

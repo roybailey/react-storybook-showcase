@@ -1,8 +1,4 @@
-import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
-import {Scatter} from 'react-chartjs-2';
-
-const data = {
+export default {
   labels: ['Scatter'],
   datasets: [
     {
@@ -30,13 +26,3 @@ const data = {
     }
   ]
 };
-
-
-storiesOf('ChartJS Scatter v1.0', module)
-  .add('ChartJS Scatter', () => (
-    <div>
-      <h2>Scatter Example</h2>
-      <Scatter data={data} />
-    </div>
-  ))
-  ;

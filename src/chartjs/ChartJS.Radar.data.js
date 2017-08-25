@@ -1,8 +1,4 @@
-import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
-import {Radar} from 'react-chartjs-2';
-
-const data = {
+export default {
   labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
   datasets: [
     {
@@ -27,13 +23,3 @@ const data = {
     }
   ]
 };
-
-
-storiesOf('ChartJS Radar v1.0', module)
-  .add('ChartJS Radar', () => (
-    <div>
-      <h2>Radar Example</h2>
-      <Radar data={data} />
-    </div>
-  ))
-  ;

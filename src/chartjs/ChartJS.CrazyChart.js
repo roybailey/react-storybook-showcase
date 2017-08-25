@@ -1,7 +1,7 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
 import {Bar} from 'react-chartjs-2';
 import color from 'rcolor';
+
 
 const initialState = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -17,7 +17,6 @@ const initialState = {
     }
   ]
 };
-
 
 
 const Graph = React.createClass({
@@ -63,11 +62,4 @@ const Graph = React.createClass({
 });
 
 
-storiesOf('ChartJS Crazy v1.0', module)
-  .add('ChartJS Crazy', () => (
-    <div>
-      <h2>You can even make crazy graphs like this!</h2>
-        <Graph />
-    </div>
-  ))
-  ;
+export default () => (<Graph />);

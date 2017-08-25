@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
 import {Bar} from 'react-chartjs-2';
 
 const data = {
@@ -87,15 +86,10 @@ const plugins = [{
     }
 }];
 
-storiesOf('ChartJS Mix v1.0', module)
-  .add('ChartJS Mix', () => (
-		<div>
-			<h2>Mixed data Example</h2>
-			<Bar
-				data={data}
-				options={options}
-				plugins={plugins}
-			/>
-		</div>
-  ))
-  ;
+export default () => (
+	<Bar
+		data={data}
+		options={options}
+		plugins={plugins}
+	/>
+);
