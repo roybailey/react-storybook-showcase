@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
-import SortableContainer from './SortableContainer.v1.0.js'
+import SortableContainer from './SortableHoc.Container.v1.0.js'
 import 'semantic-ui/dist/semantic.min.css'
 
 
@@ -26,8 +26,8 @@ const data = [
 ];
 
 
-storiesOf('react-sortable-hoc v1.0', module)
-  .add('Sortable Container', () => (
+storiesOf('react-sortable-hoc', module)
+  .add('Drag-n-Drop Sortable Container', () => (
     <SortableContainer width={600} height={300} data={data} />
   ))
   ;

@@ -19,11 +19,12 @@ import PolarChartData from './ChartJS.Polar.data.js'
 import RadarChartData from './ChartJS.Radar.data.js'
 import BubbleChartData from './ChartJS.Bubble.data.js'
 import ScatterChartData from './ChartJS.Scatter.data.js'
-import MixedChart from './ChartJS.MixedChart.js'
-import CrazyChart from './ChartJS.CrazyChart.js'
+
+import MixedChart from './ChartJS.MixedChart.v1.0.js'
+import CrazyChart from './ChartJS.CrazyChart.v1.0.js'
 
 
-storiesOf('ChartJS v1.0', module)
+storiesOf('ChartJS Charts', module)
   .add('ChartJS Line', () => (
     <div>
       <h2>Line Example</h2>

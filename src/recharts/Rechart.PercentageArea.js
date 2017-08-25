@@ -43,8 +43,7 @@ const renderTooltipContent = (o) => {
 };
 
 
-storiesOf('Rechart Percentage v1.0', module)
-  .add('Rechart Percentage Area', () => (
+export default () => (
       <AreaChart width={600} height={400} data={data} stackOffset="expand"
             margin={{top: 10, right: 30, left: 0, bottom: 0}} >
         <XAxis dataKey="month"/>
@@ -55,5 +54,5 @@ storiesOf('Rechart Percentage v1.0', module)
         <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
         <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658' />
       </AreaChart>
-  ))
+  )
   ;

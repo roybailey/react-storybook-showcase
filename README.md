@@ -1,9 +1,10 @@
 ## Table of Contents
 
 - [ChartJS](#chartjs)
-- [react-google-charts](#react-google-charts)
+- [ReactGoogleCharts](#react-google-charts)
 - [ReCharts](#recharts)
 - [visgraph](#visgraph)
+- [react-google-charts](#react-google-charts)
 
 ## ChartJS
 

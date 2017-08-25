@@ -11,7 +11,7 @@ import GoogleTreeMapChart from './GoogleTreeMapChart.js'
 import GoogleGanttChart from './GoogleGanttChart.js'
 
 
-storiesOf('Google Charts v1.0', module)
+storiesOf('Google Charts', module)
   .add('Google Line Chart', GoogleLineChart)
   .add('Google Bar Chart', GoogleBarChart)
   .add('Google Donut Chart', GoogleDonutChart)

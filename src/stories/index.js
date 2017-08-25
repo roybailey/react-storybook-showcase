@@ -2,6 +2,6 @@ import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 
 storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <h2>Welcome to a collection of React D3 stories...</h2>
+  .add('to React', () => (
+    <h2>Welcome to a collection of React Libraries and Widgets...</h2>
   ));

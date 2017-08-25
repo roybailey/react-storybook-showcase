@@ -4,7 +4,7 @@ import BarChart from './D3BarChart.v1.0.js'
 import LineChart from './D3LineChart.v1.0.js'
 
 
-storiesOf('D3 v1.0', module)
+storiesOf('D3', module)
     .add('D3 Bar Chart (Mobile)', () => (
         <BarChart onClick={action('clicked')}
              data={[5,10,1,3]}
