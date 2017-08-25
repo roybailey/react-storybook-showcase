@@ -1,10 +1,8 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
 import { Chart } from 'react-google-charts';
 
 
-storiesOf('Google TreeMap Chart v1.0', module)
-  .add('Google TreeMap Chart', () => {
+export default () => {
 
     const options = {};
     const data = [
@@ -50,5 +48,5 @@ storiesOf('Google TreeMap Chart v1.0', module)
          height={'400px'}
          legend_toggle
        />
-  })
+  }
   ;

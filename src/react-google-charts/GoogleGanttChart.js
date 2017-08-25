@@ -1,10 +1,8 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
 import { Chart } from 'react-google-charts';
 
 
-storiesOf('Google Gantt Chart v1.0', module)
-  .add('Google Gantt Chart', () => {
+export default () => {
 
     const options = {};
     const columns = [
@@ -35,5 +33,5 @@ storiesOf('Google Gantt Chart v1.0', module)
          height={'400px'}
          legend_toggle
        />
-  })
+  }
   ;

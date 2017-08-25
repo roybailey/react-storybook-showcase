@@ -1,10 +1,8 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
 import { Chart } from 'react-google-charts';
 
 
-storiesOf('Google Bubble Chart v1.0', module)
-  .add('Google Bubble Chart', () => {
+export default () => {
 
     const data = [
       ["ID","Life Expectancy","Fertility Rate","Region","Population"],
@@ -35,5 +33,4 @@ storiesOf('Google Bubble Chart v1.0', module)
          height={'400px'}
          legend_toggle
        />
-  })
-  ;
+  };
