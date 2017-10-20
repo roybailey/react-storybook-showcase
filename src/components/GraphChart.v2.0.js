@@ -5,8 +5,8 @@ import { select, selectAll, event as currentEvent } from 'd3-selection'
 import { attrs } from 'd3-selection-multi'
 import { forceLink, forceSimulation, forceManyBody, forceCenter } from 'd3-force'
 import { drag } from 'd3-drag'
-require('../App.css')
 import Dimensions from 'react-dimensions'
+require('../App.css')
 
 
 class GraphChart extends Component {
